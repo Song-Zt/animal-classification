@@ -18,6 +18,10 @@ __pycache__/
 .vscode/
 *.suo
 
+# 其他项目（不上传）
+Diabetes/
+test.py
+
 # 系统文件
 .DS_Store
 Thumbs.db

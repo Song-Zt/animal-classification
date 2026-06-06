@@ -23,7 +23,7 @@ import os
 import time
 
 # 设置预训练权重下载目录为当前目录下的 model 文件夹
-WEIGHTS_DIR = 'D:/python/lianxi/model'
+WEIGHTS_DIR = 'Your_Path/model'
 os.makedirs(WEIGHTS_DIR, exist_ok=True)
 os.environ['TORCH_HOME'] = WEIGHTS_DIR
 
@@ -33,7 +33,7 @@ BATCH_SIZE = 32        # ResNet 更大，batch 改小一些避免显存不足
 IMG_SIZE = 128         # 改为 128×128，保留更多图片细节
 NUM_EPOCHS = 5        # 训练轮数增加到 25
 LEARNING_RATE = 0.001  # 学习率
-DATA_ROOT = 'D:/python/lianxi/data/raw-img'
+DATA_ROOT = 'Your_Path/data/raw-img'
 
 
 # ==================== 1.自定义数据集类 ====================
@@ -223,7 +223,7 @@ if __name__ == '__main__':
         # 记录最佳准确率
         if test_acc > best_acc:
             best_acc = test_acc
-            torch.save(model.state_dict(), 'D:/python/lianxi/model/animal_model_best.pth')
+            torch.save(model.state_dict(), 'Your_Path/model/animal_model_best.pth')
 
         print(f'Epoch [{epoch+1:2d}/{NUM_EPOCHS}]  '
               f'Loss: {train_loss:.4f}  '
@@ -232,7 +232,7 @@ if __name__ == '__main__':
               f'Time: {elapsed:.1f}s')
 
     # ----- 5.5 保存模型 -----
-    torch.save(model.state_dict(), 'D:/python/lianxi/model/animal_model.pth')
+    torch.save(model.state_dict(), 'Your_Path/model/animal_model.pth')
     print('=' * 60)
     print(f'最终测试准确率: {test_acc:.2f}%')
     print(f'最佳测试准确率: {best_acc:.2f}%')

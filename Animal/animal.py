@@ -18,9 +18,9 @@ from torchsummary import summary
 # ==================== 超参数 ====================
 BATCH_SIZE = 64       # 每批次样本数（显存不够就改小）
 IMG_SIZE = 64         # 统一缩放到 64×64
-NUM_EPOCHS = 10       # 训练轮数
+NUM_EPOCHS = 25       # 训练轮数
 LEARNING_RATE = 0.001 # 学习率
-DATA_ROOT = 'D:/python/lianxi/data/raw-img'  # 数据集路径
+DATA_ROOT = 'Your_Path/data/raw-img'  # 数据集路径
 
 
 # ==================== 1.自定义数据集类 ====================
@@ -233,7 +233,7 @@ if __name__ == '__main__':
               f'Time: {elapsed:.1f}s')
 
     # ----- 5.5 保存模型 -----
-    torch.save(model.state_dict(), 'D:/python/lianxi/model/animal_model.pth')
+    torch.save(model.state_dict(), 'Your_Path/model/animal_model.pth')
     print('=' * 50)
     print(f'最终测试准确率: {test_acc:.2f}%')
     print('模型已保存到 model/animal_model.pth')
